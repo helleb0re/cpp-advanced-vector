@@ -193,6 +193,7 @@ public:
 
     template<typename... Args>
     iterator Emplace(const_iterator pos, Args &&...args) {
+        assert(pos >= begin() && pos <= end());
         if (pos == cend()) {
             return &EmplaceBack(std::forward<Args>(args)...);
         }
@@ -214,6 +215,7 @@ public:
     }
 
     iterator Erase(const_iterator pos) {
+        assert(pos >= begin() && pos < end());
         size_t count = std::distance(pos, cend());
         std::move(end() - count + 1, end(), end() - count);
         PopBack();
