@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+advanced-vector/.vscode
+advanced-vector/.idea
+advanced-vector/cmake-build-debug
+advanced-vector/build
